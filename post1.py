@@ -19,6 +19,8 @@ response = requests.request("POST", url, headers=headers, data=payload)
 
 webhook_data = response.json()
 # this gives back the auth token and webhook for sql solution
+
+# we are using this method cause auth token changes everytime so it will be easier to access the token
 access_token = webhook_data.get('accessToken')
 submission_webhook = webhook_data.get('webhook')
 
